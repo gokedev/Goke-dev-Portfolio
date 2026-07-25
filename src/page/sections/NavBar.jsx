@@ -17,8 +17,12 @@ export default function NavBar({ isScrolled }) {
     >
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <a href="#home" className="text-2xl font-bold text-blue-400">
-            SA
+          <a href="#home" className="flex items-center gap-2">
+            <img
+              src="/sa-logo.svg"
+              alt="SA Logo"
+              className="w-9 h-9 rounded-lg"
+            />
           </a>
 
           <div className="hidden md:flex items-center gap-8">
