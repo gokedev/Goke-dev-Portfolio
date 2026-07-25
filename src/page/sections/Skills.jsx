@@ -1,22 +1,29 @@
 import React from "react";
+import { motion } from "framer-motion";
 
-export default function Skills({ isVisible, skillGroups }) {
+export default function Skills({ skillGroups }) {
   return (
     <section id="skills" className="relative py-32 px-6 bg-white/5">
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-500/30 to-transparent"></div>
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold mb-16 text-blue-300">
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="text-4xl md:text-5xl font-bold mb-16 text-blue-300"
+        >
           Technical Skills
-        </h2>
+        </motion.h2>
 
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
           {skillGroups.map((group, index) => (
-            <div
+            <motion.div
               key={group.title}
-              className={`transition-all duration-1000 ${
-                isVisible.skills ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-              }`}
-              style={{ transitionDelay: `${index * 80}ms` }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <h3 className="text-2xl font-semibold mb-4 text-blue-200">
                 {group.title}
@@ -31,7 +38,7 @@ export default function Skills({ isVisible, skillGroups }) {
                   </span>
                 ))}
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
