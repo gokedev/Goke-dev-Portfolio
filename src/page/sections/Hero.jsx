@@ -65,14 +65,25 @@ export default function Hero() {
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
-              className="inline-flex items-center gap-2 mb-6 rounded-full border border-blue-400/30 bg-blue-500/10 px-4 py-1 text-sm text-blue-200"
+              className="inline-flex items-center gap-3 mb-6"
             >
-              <motion.span
-                animate={{ scale: [1, 1.5, 1] }}
-                transition={{ duration: 2, repeat: Infinity }}
-                className="h-2 w-2 rounded-full bg-blue-400"
-              ></motion.span>
-              Hello, I am
+              <div className="flex items-center gap-2 rounded-full border border-blue-400/30 bg-blue-500/10 px-4 py-1 text-sm text-blue-200">
+                <motion.span
+                  animate={{ scale: [1, 1.5, 1] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                  className="h-2 w-2 rounded-full bg-blue-400"
+                ></motion.span>
+                Hello, I am
+              </div>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.4, delay: 0.8 }}
+                className="flex items-center gap-2 rounded-full border border-green-400/30 bg-green-500/10 px-4 py-1 text-sm text-green-300"
+              >
+                <span className="h-2 w-2 rounded-full bg-green-400 animate-pulse"></span>
+                Available for work
+              </motion.div>
             </motion.div>
 
             <motion.h1
