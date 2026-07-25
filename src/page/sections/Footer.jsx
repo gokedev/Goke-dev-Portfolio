@@ -10,8 +10,9 @@ export default function Footer() {
               Agbaje Stephen
             </div>
             <p className="text-gray-400 mt-3 leading-relaxed">
-              Full stack developer crafting clean, scalable, and reliable web
-              applications with React, Node.js, and MongoDB.
+              Full stack developer building production web and mobile
+              applications for African media and fintech with React, Node.js,
+              React Native, and Java.
             </p>
           </div>
 
@@ -20,14 +21,17 @@ export default function Footer() {
               Quick Links
             </div>
             <div className="flex flex-col gap-2 text-gray-400">
+              <a href="#about" className="hover:text-blue-300 transition">
+                About
+              </a>
+              <a href="#experience" className="hover:text-blue-300 transition">
+                Experience
+              </a>
               <a href="#projects" className="hover:text-blue-300 transition">
                 Projects
               </a>
               <a href="#skills" className="hover:text-blue-300 transition">
                 Tech Stack
-              </a>
-              <a href="#about" className="hover:text-blue-300 transition">
-                About
               </a>
               <a href="#contact" className="hover:text-blue-300 transition">
                 Contact
@@ -41,7 +45,7 @@ export default function Footer() {
             </div>
             <div className="flex flex-col gap-2 text-gray-400">
               <a
-                href="https://github.com/Agbajestephen"
+                href="https://github.com/gokedev"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-blue-300 transition"
@@ -49,7 +53,7 @@ export default function Footer() {
                 GitHub
               </a>
               <a
-                href="https://www.linkedin.com/in/stephen-agbaje-bb229a365/"
+                href="https://linkedin.com/in/agbaje-stephen-88b02932b"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-blue-300 transition"
@@ -62,7 +66,7 @@ export default function Footer() {
               >
                 Email
               </a>
-              <a href="tel:09014057707" className="hover:text-blue-300 transition">
+              <a href="tel:+2349014057707" className="hover:text-blue-300 transition">
                 Phone
               </a>
             </div>
