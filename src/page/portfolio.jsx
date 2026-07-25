@@ -5,9 +5,11 @@ import Contact from "./sections/Contact";
 import Experience from "./sections/Experience";
 import Footer from "./sections/Footer";
 import Hero from "./sections/Hero";
+import Marquee from "./sections/Marquee";
 import NavBar from "./sections/NavBar";
 import Projects from "./sections/Projects";
 import Skills from "./sections/Skills";
+import Stats from "./sections/Stats";
 
 export default function Portfolio() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -79,6 +81,7 @@ export default function Portfolio() {
     {
       title: "FinWise",
       subtitle: "Fintech Platform",
+      category: "Full-Stack",
       year: "2026",
       tech: [
         "React Native (Expo)",
@@ -105,6 +108,7 @@ export default function Portfolio() {
     {
       title: "Chatify",
       subtitle: "Messaging App",
+      category: "Full-Stack",
       year: "2024",
       tech: ["React", "Node.js", "Express", "MongoDB", "Socket.io"],
       description:
@@ -119,6 +123,7 @@ export default function Portfolio() {
     {
       title: "Zuzu's Delightful Delivery",
       subtitle: "Client Demo — Food Delivery",
+      category: "Frontend",
       year: "2025",
       tech: ["React", "CSS", "Vercel"],
       description:
@@ -128,6 +133,7 @@ export default function Portfolio() {
     {
       title: "Isle of Barra Retreat",
       subtitle: "Client Demo — Hospitality",
+      category: "Frontend",
       year: "2025",
       tech: ["React", "CSS", "Vercel"],
       description:
@@ -137,6 +143,7 @@ export default function Portfolio() {
     {
       title: "Mario Pizza Pulse",
       subtitle: "Client Demo — Restaurant",
+      category: "Frontend",
       year: "2025",
       tech: ["React", "CSS", "Vercel"],
       description:
@@ -146,6 +153,7 @@ export default function Portfolio() {
     {
       title: "Sales & Inventory System",
       subtitle: "Desktop App",
+      category: "Backend",
       year: "2024",
       tech: ["Java", "JavaFX", "MySQL", "JDBC", "Maven", "FontAwesomeFX"],
       description:
@@ -159,6 +167,7 @@ export default function Portfolio() {
     {
       title: "Restaurant Website",
       subtitle: "Personal Project",
+      category: "Frontend",
       year: "2024",
       tech: ["React", "CSS"],
       description:
@@ -200,6 +209,8 @@ export default function Portfolio() {
     <div className="min-h-screen bg-black text-white bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.08),_rgba(0,0,0,0.9))]">
       <NavBar isScrolled={isScrolled} />
       <Hero />
+      <Stats />
+      <Marquee />
       <About />
       <Experience experience={experience} />
       <Skills skillGroups={skillGroups} />
