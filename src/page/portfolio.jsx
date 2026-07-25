@@ -2,6 +2,7 @@
 import About from "./sections/About";
 import Certifications from "./sections/Certifications";
 import Contact from "./sections/Contact";
+import Experience from "./sections/Experience";
 import Footer from "./sections/Footer";
 import Hero from "./sections/Hero";
 import NavBar from "./sections/NavBar";
@@ -9,7 +10,6 @@ import Projects from "./sections/Projects";
 import Skills from "./sections/Skills";
 
 export default function Portfolio() {
-  const [isVisible, setIsVisible] = useState({});
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -17,99 +17,169 @@ export default function Portfolio() {
       setIsScrolled(window.scrollY > 50);
     };
     window.addEventListener("scroll", handleScroll);
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          setIsVisible((prev) => ({
-            ...prev,
-            [entry.target.id]: entry.isIntersecting,
-          }));
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    document.querySelectorAll("section[id]").forEach((section) => {
-      observer.observe(section);
-    });
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      observer.disconnect();
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const skillGroups = [
     {
       title: "Frontend",
-      items: ["React", "JavaScript", "CSS3", "Tailwind CSS", "Sass", "HTML5"],
+      items: [
+        "React",
+        "JavaScript (ES6+)",
+        "HTML5",
+        "CSS3",
+        "Tailwind CSS",
+        "Sass",
+        "Framer Motion",
+      ],
     },
     {
       title: "Backend",
-      items: ["Node.js", "Java", "Spring Boot", "Express.js"],
+      items: [
+        "Node.js",
+        "Express.js",
+        "Java",
+        "Spring Boot",
+        "Spring Security",
+        "REST API Design",
+      ],
     },
     {
-      title: "Database",
-      items: ["MongoDB", "MySQL", "Supabase", "Firebase"],
+      title: "Mobile & Desktop",
+      items: ["React Native", "Flutter", "JavaFX"],
     },
     {
-      title: "Mobile",
-      items: ["React Native", "Flutter"],
+      title: "Databases",
+      items: ["MongoDB", "MySQL", "Firebase", "Supabase", "MongoDB Atlas"],
     },
     {
       title: "Cloud & DevOps",
-      items: ["Netlify", "Vercel", "Docker", "GitHub Actions"],
+      items: ["Vercel", "Netlify", "Hostinger", "Docker", "GitHub Actions"],
     },
     {
-      title: "Version Control",
-      items: ["Git", "GitHub", "GitLab"],
+      title: "Integrations",
+      items: ["Paystack", "Termii", "Brevo", "Clerk", "JWT", "OAuth", "Gemini AI"],
     },
     {
-      title: "Tools & Others",
+      title: "Tools & Version Control",
       items: [
-        "REST APIs",
-        "VS Code",
         "Postman",
         "Figma",
+        "VS Code",
         "IntelliJ",
         "Android Studio",
+        "Git",
+        "GitHub",
+        "GitLab",
       ],
     },
   ];
 
   const projects = [
     {
-      title: "Sales & Inventory System",
-      tech: ["Java", "MySQL"],
+      title: "FinWise",
+      subtitle: "Fintech Platform",
+      year: "2026",
+      tech: [
+        "React Native (Expo)",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "JWT",
+        "Paystack",
+        "VTPass",
+        "Cloudinary",
+        "Brevo",
+        "React/Vite",
+      ],
       description:
-        "Comprehensive inventory management system for tracking products, sales, and stock levels with robust business logic and real-time analytics.",
-      github: "https://github.com/Agbajestephen/Sales-Inventroy",
-      // liveDemo: "https://inventory-company1.vercel.app",
+        "A full-stack Nigerian fintech platform with a React Native mobile app, Node.js/Express REST API, and a React/Vite admin dashboard.",
+      bullets: [
+        "Three-tier KYC system with BVN-linked verification at Tier 2, JWT authentication, and OTP delivery via Brevo",
+        "Multi-wallet management with Paystack virtual accounts (NUBAN) for bank deposits, P2P and bank transfers, virtual cards, and QR code payments",
+        "VTPass bill payments integration for airtime, data, electricity, and TV",
+        "Admin dashboard for user management, transaction oversight, and KYC document review",
+      ],
+      github: "https://github.com/gokedev",
     },
     {
-      title: "Chatify Messaging App",
-      tech: ["React", "Node.js", "Express", "MongoDB"],
+      title: "Chatify",
+      subtitle: "Messaging App",
+      year: "2024",
+      tech: ["React", "Node.js", "Express", "MongoDB", "Socket.io"],
       description:
-        "Real-time messaging application with secure authentication, live chat functionality, and scalable server-side architecture.",
-      github: "https://github.com/Agbajestephen/CHATIFY-APP",
+        "A real-time messaging platform supporting instant messaging, image sharing, and friend requests.",
+      bullets: [
+        "Socket.io-powered live message delivery and online presence indicators",
+        "Real-time friend request system with notification updates",
+      ],
+      github: "https://github.com/gokedev/CHATIFY-APP",
       liveDemo: "https://chatify8.vercel.app",
     },
     {
-      title: "Notes Application",
-      tech: ["Express", "EJS", "MongoDB", "Google OAuth"],
+      title: "Zuzu's Delightful Delivery",
+      subtitle: "Client Demo — Food Delivery",
+      year: "2025",
+      tech: ["React", "CSS", "Vercel"],
       description:
-        "Full-stack notes management application with secure OAuth authentication and comprehensive CRUD operations.",
-      github: "https://github.com/Agbajestephen/Note-Project",
-      liveDemo: "", // Add when deployed
+        "Frontend demo for a Nigerian food delivery service. Warm, inviting design with menu browsing and order flow. Built on spec to showcase initiative in identifying real business problems.",
+      liveDemo: "https://zuzus-delightful-delivery.vercel.app/",
+    },
+    {
+      title: "Isle of Barra Retreat",
+      subtitle: "Client Demo — Hospitality",
+      year: "2025",
+      tech: ["React", "CSS", "Vercel"],
+      description:
+        "Frontend demo for a hospitality and retreat business. Calming aesthetic with booking and gallery pages. Built on spec to demonstrate tailored UX for a specific industry.",
+      liveDemo: "https://isle-of-barra-retreat.vercel.app/",
+    },
+    {
+      title: "Mario Pizza Pulse",
+      subtitle: "Client Demo — Restaurant",
+      year: "2025",
+      tech: ["React", "CSS", "Vercel"],
+      description:
+        "Frontend demo for a local restaurant. Bold, energetic layout with menu, online ordering, and contact section. Built on spec as a proactive freelance pitch.",
+      liveDemo: "https://mario-pizza-pulse.vercel.app/",
+    },
+    {
+      title: "Sales & Inventory System",
+      subtitle: "Desktop App",
+      year: "2024",
+      tech: ["Java", "JavaFX", "MySQL", "JDBC", "Maven", "FontAwesomeFX"],
+      description:
+        "Desktop inventory management application with stock tracking, a sales analytics dashboard, and role-based access control.",
+      bullets: [
+        "JDBC integration with MySQL following an MVC-style architecture",
+        "Real-time sales analytics dashboard with reporting features",
+      ],
+      github: "https://github.com/gokedev/Sales-Inventroy",
     },
     {
       title: "Restaurant Website",
+      subtitle: "Personal Project",
+      year: "2024",
       tech: ["React", "CSS"],
       description:
         "Modern restaurant website featuring interactive design, responsive layout, and smooth user experience.",
-      github: "https://github.com/Agbajestephen/Resturant",
+      github: "https://github.com/gokedev/Resturant",
       liveDemo: "https://goke-resturant.vercel.app",
+    },
+  ];
+
+  const experience = [
+    {
+      role: "Frontend Developer Intern",
+      company: "Alaffia Media",
+      location: "Lagos, Nigeria",
+      period: "Jan 2026 - Present",
+      bullets: [
+        "Built and deployed Alaffia Daily Reset, a production PWA that automates daily audio publishing through date-driven scheduling and zero-padded file naming logic, with WhatsApp community integration. Live at daily.alaffiaradio.com.",
+        "Built and deployed Alaffia Pause, a production PWA delivering a 30-day guided audio program with campaign start-day offset logic and social sharing. Live at pause.alaffiaradio.com.",
+        "Collaborated with the media and brand team to align all technical outputs with editorial direction and product milestones.",
+      ],
+      tech: ["React", "Vite", "PWA"],
     },
   ];
 
@@ -126,14 +196,14 @@ export default function Portfolio() {
     },
   ];
 
-
   return (
     <div className="min-h-screen bg-black text-white bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.08),_rgba(0,0,0,0.9))]">
       <NavBar isScrolled={isScrolled} />
-      <Hero isVisible={isVisible} />
-      <About isVisible={isVisible} />
-      <Skills isVisible={isVisible} skillGroups={skillGroups} />
-      <Projects isVisible={isVisible} projects={projects} />
+      <Hero />
+      <About />
+      <Experience experience={experience} />
+      <Skills skillGroups={skillGroups} />
+      <Projects projects={projects} />
       <Certifications certifications={certifications} />
       <Contact />
       <Footer />
