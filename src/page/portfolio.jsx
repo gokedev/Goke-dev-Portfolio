@@ -46,7 +46,7 @@ export default function Portfolio() {
     },
     {
       title: "Mobile & Desktop",
-      items: ["React Native", "Flutter", "JavaFX"],
+      items: ["React Native", "JavaFX"],
     },
     {
       title: "Databases",
@@ -54,7 +54,7 @@ export default function Portfolio() {
     },
     {
       title: "Cloud & DevOps",
-      items: ["Vercel", "Netlify", "Hostinger", "Docker", "GitHub Actions"],
+      items: ["Vercel", "Hostinger", "Docker", "GitHub Actions"],
     },
     {
       title: "Integrations",
