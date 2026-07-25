@@ -1,7 +1,8 @@
 import React from "react";
-import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
+import { motion } from "framer-motion";
+import { ArrowRight, Github, Linkedin, Mail, MapPin } from "lucide-react";
 
-export default function Hero({ isVisible }) {
+export default function Hero() {
   return (
     <section
       id="home"
@@ -12,10 +13,10 @@ export default function Hero({ isVisible }) {
       </div>
       <div className="max-w-7xl mx-auto w-full">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div
-            className={`transition-all duration-1000 ${
-              isVisible.home ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-            }`}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <div className="inline-flex items-center gap-2 mb-6 rounded-full border border-blue-400/30 bg-blue-500/10 px-4 py-1 text-sm text-blue-200">
               <span className="h-2 w-2 rounded-full bg-blue-400"></span>
@@ -24,13 +25,20 @@ export default function Hero({ isVisible }) {
             <h1 className="text-6xl md:text-7xl font-bold mb-6 leading-tight">
               Agbaje Stephen
             </h1>
-            <h2 className="text-3xl md:text-4xl text-blue-300 mb-6">
+            <h2 className="text-2xl md:text-3xl text-blue-300 mb-2">
               Full Stack Developer
             </h2>
+            <p className="text-lg text-gray-400 mb-2 font-medium">
+              Backend · Frontend · Mobile & Desktop
+            </p>
+            <div className="flex items-center gap-2 text-gray-500 text-sm mb-6">
+              <MapPin size={14} />
+              Lagos, Nigeria
+            </div>
             <p className="text-lg text-gray-400 mb-8 max-w-xl leading-relaxed">
-              Building calm, reliable digital experiences that feel effortless to
-              use. I blend thoughtful design with solid engineering to deliver
-              products that scale.
+              Building production web and mobile applications for African media
+              and fintech use cases. Skilled in React, Node.js/Express, React
+              Native, and Java/Spring Boot.
             </p>
             <div className="flex flex-wrap gap-4">
               <a
@@ -52,7 +60,7 @@ export default function Hero({ isVisible }) {
             </div>
             <div className="flex gap-4 mt-8">
               <a
-                href="https://github.com/Agbajestephen"
+                href="https://github.com/gokedev"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-300/80 hover:text-blue-200 transition-colors"
@@ -60,7 +68,7 @@ export default function Hero({ isVisible }) {
                 <Github size={24} />
               </a>
               <a
-                href="https://www.linkedin.com/in/stephen-agbaje-bb229a365/"
+                href="https://linkedin.com/in/agbaje-stephen-88b02932b"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-300/80 hover:text-blue-200 transition-colors"
@@ -74,12 +82,13 @@ export default function Hero({ isVisible }) {
                 <Mail size={24} />
               </a>
             </div>
-          </div>
+          </motion.div>
 
-          <div
-            className={`relative transition-all duration-1000 delay-300 ${
-              isVisible.home ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-            }`}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+            className="relative"
           >
             <div className="relative w-full max-w-md mx-auto">
               <div className="absolute -inset-6 rounded-3xl bg-blue-500/10 blur-2xl"></div>
@@ -92,7 +101,7 @@ export default function Hero({ isVisible }) {
               </div>
               <div className="absolute -z-10 top-8 right-8 w-full h-full border border-white/10 rounded-2xl"></div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
